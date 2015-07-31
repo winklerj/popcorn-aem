@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1438313424930
+Build-Jdk: 1.8.0_40
+Built-By: 33108
+Bundle-Description: Maven Multimodule project for Integration between Po
+ pcornJS, AEM and Videos.
+Bundle-ManifestVersion: 2
+Bundle-Name: Integration between PopcornJS, AEM and Videos Bundle
+Bundle-SymbolicName: com.icfi.aem.popcorn.popcorn-aem-bundle
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.icfi.aem.popcorn;version="1.0.0",com.icfi.aem.popcor
+ n.components.content;uses:="com.citytechinc.aem.bedrock.core.components
+ ,org.slf4j,org.apache.commons.lang,org.apache.sling.api.resource,com.ci
+ tytechinc.aem.bedrock.api.node,com.citytechinc.aem.bedrock.api.request"
+ ;version="1.0.0.SNAPSHOT"
+Import-Package: com.citytechinc.aem.bedrock.api.node;version="[3.2,4)",c
+ om.citytechinc.aem.bedrock.api.request;version="[3.2,4)",com.citytechin
+ c.aem.bedrock.core.components;version="[3.2,4)",org.apache.commons.lang
+ ;version="[2.6,3)",org.apache.sling.api.resource;version="[2.1,3)",org.
+ slf4j;version="[1.5,2)"
+Tool: Bnd-1.50.0

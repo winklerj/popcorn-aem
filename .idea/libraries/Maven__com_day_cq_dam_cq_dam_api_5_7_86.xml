@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.day.cq.dam:cq-dam-api:5.7.86">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/day/cq/dam/cq-dam-api/5.7.86/cq-dam-api-5.7.86.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/day/cq/dam/cq-dam-api/5.7.86/cq-dam-api-5.7.86-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/day/cq/dam/cq-dam-api/5.7.86/cq-dam-api-5.7.86-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

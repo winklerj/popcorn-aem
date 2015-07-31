@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.adobe.cq.wcm:cq-wcm-launches-core:5.8.8">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/adobe/cq/wcm/cq-wcm-launches-core/5.8.8/cq-wcm-launches-core-5.8.8.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/adobe/cq/wcm/cq-wcm-launches-core/5.8.8/cq-wcm-launches-core-5.8.8-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/adobe/cq/wcm/cq-wcm-launches-core/5.8.8/cq-wcm-launches-core-5.8.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

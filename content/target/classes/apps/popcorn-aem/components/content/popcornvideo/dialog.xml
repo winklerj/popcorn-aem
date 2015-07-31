@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <asset
+            jcr:primaryType="cq:Widget"
+            title="Video"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <file
+                    jcr:primaryType="cq:Widget"
+                    allowFileNameEditing="{Boolean}false"
+                    allowUpload="{Boolean}false"
+                    ddAccept="[video/.*]"
+                    ddGroups="[media,s7media]"
+                    fieldLabel="Video asset"
+                    fileReferenceParameter="./asset"
+                    name="./file"
+                    noFileNameText=""
+                    transferFileName="{Boolean}false"
+                    xtype="html5smartfile"/>
+                <size
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Overrides size defined in design"
+                    fieldLabel="Size"
+                    heightParameter="./height"
+                    heightSuffix=""
+                    widthParameter="./width"
+                    widthSuffix=""
+                    xtype="sizefield"/>
+                <linksmulti jcr:primaryType="cq:Widget" fieldLabel="Component Paths"
+                            baseName="component" name="./components" prefix="./" xtype="multicompositefield">
+                    <fieldConfigs jcr:primaryType="cq:WidgetCollection">
+                        <label jcr:primaryType="nt:unstructured" fieldLabel="Label"
+                               name="componentPath" xtype="pathfield" allowBlank="true" parBrowse="true" parLinkPattern="\{0}/\{1}" />
+                    </fieldConfigs>
+                </linksmulti>
+            </items>
+        </asset>
+    </items>
+</jcr:root>

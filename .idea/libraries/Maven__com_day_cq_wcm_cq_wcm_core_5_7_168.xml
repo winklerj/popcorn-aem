@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.day.cq.wcm:cq-wcm-core:5.7.168">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/day/cq/wcm/cq-wcm-core/5.7.168/cq-wcm-core-5.7.168.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/day/cq/wcm/cq-wcm-core/5.7.168/cq-wcm-core-5.7.168-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/day/cq/wcm/cq-wcm-core/5.7.168/cq-wcm-core-5.7.168-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
