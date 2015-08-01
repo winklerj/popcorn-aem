@@ -29,6 +29,7 @@
             video.addEventListener('pause', onpause, false );
             video.addEventListener( 'play', onplay, false );
             video.addEventListener( 'ended', onended, false );
+            video.addEventListener( 'seeked', onseeked, false );
 
 
             // Called when the Visualization API is loaded.

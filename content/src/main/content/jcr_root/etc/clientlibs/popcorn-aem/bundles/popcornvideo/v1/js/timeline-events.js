@@ -12,13 +12,20 @@ var onended = function( options ) {
     onpause(options)
 }
 
+var onseeked = function( options ) {
+    console.log('onseeked: ', options);
+    updateVideoCurrentTime()
+}
 
-//Timer to update the current time on the timeline
-var updateTimelineOnStart = function (options) {
+var updateVideoCurrentTime = function(){
     var newTime = new Date();
     newTime.setHours(0, 0, 0, video.currentTime*1000);
     timeline.setCustomTime(newTime);
     timeline.repaintCustomTime();
+}
+//Timer to update the current time on the timeline
+var updateTimelineOnStart = function (options) {
+    updateVideoCurrentTime();
     currentPositionTimerId = setTimeout(function () {
         updateTimelineOnStart(options);
     }, 50);
