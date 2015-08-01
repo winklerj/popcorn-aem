@@ -13,4 +13,5 @@
                 sling:resourceType="butter/components/content/popcornvideo"/>
         </video>
     </cq:dropTargets>
+    <cq:listenters jcr:primaryType="cq:EditListenersConfig" afteredit="REFRESH_PAGE" afterinsert="REFRESH_PAGE"/>
 </jcr:root>
