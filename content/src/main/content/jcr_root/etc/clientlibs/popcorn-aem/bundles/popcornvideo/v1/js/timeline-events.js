@@ -113,30 +113,29 @@ function onrangechanged() {
 }
 
 var hideComponent = function(event){
-    var componentType = getComponent(event.id);
-    console.log("hideComponent: componentType:",componentType);
-    $('.' + componentType).hide();
+    var selector = getJQuerySelector(event.id);
+    console.log('showComponent: selector:', selector);
+    $(selector).hide();
 }
 
 var showComponent = function(event){
-    var componentType = getComponent(event.id);
-    console.log("showComponent: componentType:",componentType);
-    $('.' + componentType).show();
-
+    var selector = getJQuerySelector(event.id);
+    console.log('showComponent: selector:', selector);
+    $(selector).show();
 }
 
 var bedazzleText = function(event) {
-    var componentType = getComponent(event.id);
-    console.log("bedazzleText: componentType:",componentType);
-    var elem = $('.' + componentType)
+    var selector = getJQuerySelector(event.id);
+    console.log('bedazzleText: selector:', selector);
+    var elem = $(selector);
     elem.css("font-weight","bold");
     elem.css("text-transform","uppercase");
 }
 
 var undazzleText = function(event) {
-    var componentType = getComponent(event.id);
-    console.log("undazzleText: componentType:",componentType);
-    var elem = $('.' + componentType)
+    var selector = getJQuerySelector(event.id);
+    console.log('undazzleText: selector:', selector);
+    var elem = $(selector);
     elem.css("font-weight","normal");
     elem.css("text-transform","none");
 }
