@@ -84,7 +84,6 @@
                 google.visualization.events.addListener(timeline, 'add', onadd);
                 google.visualization.events.addListener(timeline, 'edit', onedit);
                 google.visualization.events.addListener(timeline, 'delete', ondelete);
-                google.visualization.events.addListener(timeline, 'rangechanged', onrangechanged);
 
                 // Draw our timeline with the created data and options
                 timeline.draw(data, options);

@@ -108,10 +108,6 @@ var onadd = function () {
     }
 };
 
-function onrangechanged() {
-    console.log(  "onrangechanged: range changed<br>");
-}
-
 var hideComponent = function(event){
     console.log('hideComponent: path:' + event.id);
     getComponentElement(event.id).hide();
