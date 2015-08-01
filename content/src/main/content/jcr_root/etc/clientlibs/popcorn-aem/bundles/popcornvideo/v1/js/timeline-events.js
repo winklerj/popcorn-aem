@@ -16,12 +16,10 @@ var onended = function( options ) {
 //Timer to update the current time on the timeline
 var updateTimelineOnStart = function (options) {
     var newTime = new Date();
-//    console.log('updateTimelineOnStart: video current time',video.currentTime);
     newTime.setHours(0, 0, 0, video.currentTime*1000);
     timeline.setCustomTime(newTime);
     timeline.repaintCustomTime();
     currentPositionTimerId = setTimeout(function () {
-//        console.log("updateTimelineOnStart: setTimeout");
         updateTimelineOnStart(options);
     }, 50);
 };
@@ -41,22 +39,6 @@ function getSelectedRow() {
     return row;
 }
 
-
-
-// Make a callback function for the select item
-var onselect = function (event) {
-    var row = getSelectedRow();
-
-    if (row != undefined) {
-        console.log( "onselect: item " + row + " selected<br>");
-        // Note: you can retrieve the contents of the selected row with
-        //       data.getValue(row, 2);
-    }
-    else {
-        console.log( "onselect: no item selected<br>");
-    }
-};
-
 // callback function for the change item
 var onchanged = function (event) {
     var row = getSelectedRow();
@@ -71,6 +53,20 @@ var onchanged = function (event) {
         updatePopcornShowHideTrack(popcorn, path, convertDateToVideoTime(start), convertDateToVideoTime(end));
     } else {
         updatePopcornBoldTextTrack(popcorn, path, convertDateToVideoTime(start), convertDateToVideoTime(end));
+    }
+};
+
+// Make a callback function for the select item
+var onselect = function (event) {
+    var row = getSelectedRow();
+
+    if (row != undefined) {
+        console.log( "onselect: item " + row + " selected<br>");
+        // Note: you can retrieve the contents of the selected row with
+        //       data.getValue(row, 2);
+    }
+    else {
+        console.log( "onselect: no item selected<br>");
     }
 };
 
@@ -112,27 +108,8 @@ var onadd = function () {
     }
 };
 
-function onrangechange() {
-    // adjust the values of startDate and endDate
-    //var range = timeline.getVisibleChartRange();
-    //console.log('startDate', dateFormat(range.start));
-    //console.log('endDate', dateFormat(range.end));
-}
-
 function onrangechanged() {
     console.log(  "onrangechanged: range changed<br>");
-}
-
-// Format given date as "yyyy-mm-dd hh:ii:ss"
-// @param datetime   A Date object.
-function dateFormat(date) {
-    var datetime =   date.getFullYear() + "-" +
-        ((date.getMonth()   <  9) ? "0" : "") + (date.getMonth() + 1) + "-" +
-        ((date.getDate()    < 10) ? "0" : "") +  date.getDate() + " " +
-        ((date.getHours()   < 10) ? "0" : "") +  date.getHours() + ":" +
-        ((date.getMinutes() < 10) ? "0" : "") +  date.getMinutes() + ":" +
-        ((date.getSeconds() < 10) ? "0" : "") +  date.getSeconds();
-    return datetime;
 }
 
 var hideComponent = function(event){

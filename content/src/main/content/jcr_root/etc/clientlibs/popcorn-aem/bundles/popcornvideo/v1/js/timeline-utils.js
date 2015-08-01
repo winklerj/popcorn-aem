@@ -1,8 +1,6 @@
 var getComponent = function(path){
     var par = path.substr(path.lastIndexOf('/'));
-//    console.log('getComponent: par=',par);
     var name = par.substr(par.indexOf('_')+1);
-//    console.log('getComponent: name=',name);
     if(name.indexOf('_') > 0){
         return name.substr(0,name.indexOf('_'));
     } else {
@@ -11,12 +9,9 @@ var getComponent = function(path){
 }
 
 var getStart = function(data, path){
-//    console.log('getStart: ', path);
     for(var i = 0; i< data.getNumberOfRows();i++){
         var testPath = data.getValue(i,3);
-//        console.log('getStart: Testpath: ',testPath);
         if(testPath === path){
-//            console.log('getStart: Start Time: ',convertDateToVideoTime(data.getValue(i, 0)));
             return convertDateToVideoTime(data.getValue(i, 0));
         }
     }
@@ -24,12 +19,10 @@ var getStart = function(data, path){
 }
 
 var getEnd = function(data, path, duration){
-//    console.log('getEnd: ', path);
     var movieEnd = convertDateToVideoTime(duration);
     for(var i = 0; i< data.getNumberOfRows();i++){
         var testPath = data.getValue(i,3);
         if(testPath === path){
-//            console.log('getEnd: End Time: ',convertDateToVideoTime(data.getValue(i, 1)));
             retrievedEnd = convertDateToVideoTime(data.getValue(i, 1));
             if(retrievedEnd <= movieEnd) {
                 return retrievedEnd;
@@ -67,4 +60,16 @@ var updatePopcornBoldTextTrack = function(popcorn, path, startTime, endTime){
         onStart: bedazzleText,
         onEnd: undazzleText
     });
+}
+
+// Format given date as "yyyy-mm-dd hh:ii:ss"
+// @param datetime   A Date object.
+function dateFormat(date) {
+    var datetime =   date.getFullYear() + "-" +
+        ((date.getMonth()   <  9) ? "0" : "") + (date.getMonth() + 1) + "-" +
+        ((date.getDate()    < 10) ? "0" : "") +  date.getDate() + " " +
+        ((date.getHours()   < 10) ? "0" : "") +  date.getHours() + ":" +
+        ((date.getMinutes() < 10) ? "0" : "") +  date.getMinutes() + ":" +
+        ((date.getSeconds() < 10) ? "0" : "") +  date.getSeconds();
+    return datetime;
 }
