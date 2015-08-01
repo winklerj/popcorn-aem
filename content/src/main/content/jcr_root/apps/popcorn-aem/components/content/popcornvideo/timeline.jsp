@@ -2,13 +2,8 @@
 
 <bedrock:component className="com.icfi.aem.butter.components.content.PopcornVideo" name="popcornVideo"/>
 
-<script src="/etc/clientlibs/butter/bundles/butter/external/popcorn-complete/popcorn-complete.js"></script>
-
 <script type="text/javascript" src="//www.google.com/jsapi"></script>
-<script type="text/javascript" src="/etc/clientlibs/butter/bundles/butter/timeline-libs/timeline.js"></script>
-<script type="text/javascript" src="/etc/clientlibs/butter/bundles/butter/timeline-libs/timeline-events.js"></script>
-<script type="text/javascript" src="/etc/clientlibs/butter/bundles/butter/timeline-libs/timeline-utils.js"></script>
-<link rel="stylesheet" type="text/css" href="/etc/clientlibs/butter/bundles/butter/timeline-libs/timeline.css">
+<cq:includeClientLib categories="popcorn-aem.popcornvideo.v1,popcorn-aem.popcorn.1_5_6,popcorn-aem.chaps-link-library.timeline.2_9_1"/>
 
 
 <script type="text/javascript">
