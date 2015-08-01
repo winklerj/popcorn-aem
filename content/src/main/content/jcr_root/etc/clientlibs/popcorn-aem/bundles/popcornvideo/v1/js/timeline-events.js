@@ -113,29 +113,25 @@ function onrangechanged() {
 }
 
 var hideComponent = function(event){
-    var selector = getJQuerySelector(event.id);
-    console.log('showComponent: selector:', selector);
-    $(selector).hide();
+    console.log('hideComponent: path:' + event.id);
+    getComponentElement(event.id).hide();
 }
 
 var showComponent = function(event){
-    var selector = getJQuerySelector(event.id);
-    console.log('showComponent: selector:', selector);
-    $(selector).show();
+    console.log('showComponent: path:', event.id);
+    getComponentElement(event.id).show();
 }
 
 var bedazzleText = function(event) {
-    var selector = getJQuerySelector(event.id);
-    console.log('bedazzleText: selector:', selector);
-    var elem = $(selector);
+    console.log('bedazzleText: path:', event.id);
+    var elem = getComponentElement(event.id);
     elem.css("font-weight","bold");
     elem.css("text-transform","uppercase");
 }
 
 var undazzleText = function(event) {
-    var selector = getJQuerySelector(event.id);
-    console.log('undazzleText: selector:', selector);
-    var elem = $(selector);
+    console.log('undazzleText: path:', event.id);
+    var elem = getComponentElement(event.id);
     elem.css("font-weight","normal");
     elem.css("text-transform","none");
 }

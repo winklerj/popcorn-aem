@@ -8,17 +8,18 @@ var getComponent = function(path){
     }
 }
 
-var getJQuerySelector = function(path){
+//This will get you the elements for a component type in the specified parsys
+//TODO: return the specific component element requested
+var getComponentElement = function(path){
     var parComp = path.substr(path.lastIndexOf('/') + 1);
     var par = parComp.substr(0,parComp.indexOf('_'));
-    console.log('getJQuerySelector: par:' + par);
     var name = parComp.substr(parComp.indexOf('_')+1);
     if(name.indexOf('_') > 0){
         name = name.substr(0,name.indexOf('_'));
     } else {
         name = name;
     }
-    return '.' + par + " > ." + name;
+    return $('.' + par + " > ." + name);
 }
 
 var getStart = function(data, path){
