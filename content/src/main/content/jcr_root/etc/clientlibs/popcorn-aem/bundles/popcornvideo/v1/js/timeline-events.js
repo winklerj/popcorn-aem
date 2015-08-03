@@ -13,7 +13,6 @@ var onended = function( options ) {
 }
 
 var onseeked = function( options ) {
-    console.log('onseeked: ', options);
     updateVideoCurrentTime()
 }
 
