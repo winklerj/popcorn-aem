@@ -113,17 +113,3 @@
 
 <!-- timeline component -->
 <div id="mytimeline"></div>
-
-<!-- Buttter/Popcorn stuff -->
-<%--<div id="timeline-info"></div>--%>
-<%--<div class="butter-tray butter-tray-minimized" data-butter-exclude="true" data-butter-content-state="timeline">--%>
-	<%--<div class="butter-loading-container"></div>--%>
-	<%--<div class="butter-status-area"></div>--%>
-	<%--<div class="butter-timeline-area">--%>
-		<%--<div class="butter-timeline fadable">--%>
-		<%--</div>--%>
-	<%--</div>--%>
-	<%--<div class="butter-toggle-button">--%>
-		<%--<div class="image-container"></div>--%>
-	<%--</div>--%>
-<%--</div>--%>
