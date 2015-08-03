@@ -1,6 +1,6 @@
-<%@include file="/apps/corporate/business-center/components/global.jsp"%>
+<%@include file="/apps/popcorn-aem/components/global.jsp"%>
 
-<bedrock:component className="com.icfi.aem.butter.components.content.PopcornVideo" name="popcornVideo"/>
+<bedrock:component className="com.icfi.aem.popcorn.components.content.PopcornVideo" name="popcornVideo"/>
 
 <script type="text/javascript" src="//www.google.com/jsapi"></script>
 <cq:includeClientLib categories="popcorn-aem.popcornvideo.v1,popcorn-aem.popcorn.1_5_6,popcorn-aem.chaps-link-library.timeline.2_9_1"/>
@@ -50,15 +50,12 @@
                 console.log('drawVisualization: midnight', midnight);
                 console.log("drawVisualization: durationEnd", durationEnd);
 
-                var testEnd = new Date();
-                testEnd.setHours(0,0,5,0);
-
-                var videoTitle = '${video_title}';
+                var videoTitle = "${popcornVideo.videoTitle}";
                 console.log("drawVisualization: video title=", videoTitle)
                 data.addRows([
-                    [midnight, durationEnd, '<%=resource.getPath()%>', '<%=resource.getPath()%>']
-                    <c:forEach items="${popcornVideo.componentPaths}" var="path" varStatus="status">
-                    ,[midnight, testEnd, '${path}', '${path}']
+                    [midnight, durationEnd, videoTitle, '<%=resource.getPath()%>']
+                    <c:forEach items="${popcornVideo.components}" var="component" varStatus="status">
+                    ,[midnight, durationEnd, '${component.name}', '${component.path}']
                     </c:forEach>
                 ]);
 
@@ -100,14 +97,14 @@
 
                 //Popcorn code for video position
                 var componentType;
-                <c:forEach items="${popcornVideo.componentPaths}" var="path" varStatus="status">
-                componentType = getComponent('${path}');
+                <c:forEach items="${popcornVideo.components}" var="component" varStatus="status">
+                componentType = getComponent('${component.path}');
                 console.log('initializePopcorn: component type', componentType);
                 //TODO: get the data for this
                 if(componentType !== 'text'){
-                    updatePopcornShowHideTrack(popcorn, '${path}', getStart(data,'${path}'), getEnd(data,'${path}',durationEnd));
+                    updatePopcornShowHideTrack(popcorn, '${component.path}', getStart(data,'${component.path}'), getEnd(data,'${component.path}',durationEnd));
                 } else {
-                    updatePopcornBoldTextTrack(popcorn, '${path}', getStart(data,'${path}'), getEnd(data,'${path}',durationEnd));
+                    updatePopcornBoldTextTrack(popcorn, '${component.path}', getStart(data,'${component.path}'), getEnd(data,'${component.path}',durationEnd));
                 }
                 </c:forEach>
             }
